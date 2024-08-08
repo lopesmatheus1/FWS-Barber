@@ -7,8 +7,9 @@ import { Star } from "lucide-react"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import ServiceItem from "@/app/_components/service-item"
-import { SmartphoneIcon } from "lucide-react"
 import PhoneItem from "@/app/_components/phone-item"
+import { Sheet, SheetTrigger } from "@/app/_components/ui/sheet"
+import SidebarButton from "@/app/_components/sidebar-sheet"
 
 interface BarbershopPageProps {
   params: {
@@ -52,13 +53,18 @@ const BarbershopPage = async ({ params }: BarbershopPageProps) => {
           </Link>
         </Button>
 
-        <Button
-          size="icon"
-          variant="secondary"
-          className="absolute right-4 top-4"
-        >
-          <MenuIcon />
-        </Button>
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button
+              size="icon"
+              variant="outline"
+              className="absolute right-4 top-4"
+            >
+              <MenuIcon></MenuIcon>
+            </Button>
+          </SheetTrigger>
+          <SidebarButton></SidebarButton>
+        </Sheet>
       </div>
 
       {/*TITLE*/}
