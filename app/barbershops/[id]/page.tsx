@@ -6,6 +6,7 @@ import { MapPinIcon } from "lucide-react"
 import { Star } from "lucide-react"
 import Link from "next/link"
 import { notFound } from "next/navigation"
+import ServiceItem from "@/app/_components/service-item"
 
 interface BarbershopPageProps {
   params: {
@@ -17,6 +18,9 @@ const BarbershopPage = async ({ params }: BarbershopPageProps) => {
   const barbershop = await db.barbershop.findUnique({
     where: {
       id: params.id,
+    },
+    include: {
+      services: true,
     },
   })
 
@@ -72,6 +76,17 @@ const BarbershopPage = async ({ params }: BarbershopPageProps) => {
       <div className="space-y-3 border-b border-solid p-5">
         <h2 className="font bold text-xs uppercase text-gray-400">Sobre nós</h2>
         <p className="text-justify text-sm">{barbershop?.description}</p>
+      </div>
+
+      <div className="p-5">
+        <h2 className="font bold mb-4 text-xs uppercase text-gray-400">
+          Serviços
+        </h2>
+        <div className="space-y-4">
+          {barbershop.services.map((service) => (
+            <ServiceItem key={service.id} service={service} />
+          ))}
+        </div>
       </div>
     </div>
   )
