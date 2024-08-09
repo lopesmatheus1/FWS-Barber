@@ -7,6 +7,15 @@ import { LogOutIcon } from "lucide-react"
 import { Avatar, AvatarImage } from "@radix-ui/react-avatar"
 import Link from "next/link"
 import { Button } from "./ui/button"
+import { LogInIcon } from "lucide-react"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "./ui/dialog"
 
 const SidebarButton = () => {
   return (
@@ -15,8 +24,30 @@ const SidebarButton = () => {
         <SheetTitle className="text-left">Menu</SheetTitle>
       </SheetHeader>
 
-      <div className="flex items-center gap-3 border-b border-solid py-5">
-        <Avatar>
+      <div className="flex items-center justify-between gap-3 border-b border-solid py-5">
+        <h2 className="text-lg font-bold">Olá, faça seu login!</h2>
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button size="icon">
+              <LogInIcon />
+            </Button>
+          </DialogTrigger>
+
+          <DialogContent className="w-[90%]">
+            <DialogHeader>
+              <DialogTitle>Faça seu login</DialogTitle>
+              <DialogDescription>
+                Conecte-se usando sua conta do Google.
+              </DialogDescription>
+            </DialogHeader>
+
+            <Button variant="outline" className="gap-1 font-bold">
+              <Image alt="Google" src="/Vector.svg" width={18} height={18} />
+              Google
+            </Button>
+          </DialogContent>
+        </Dialog>
+        {/* <Avatar>
           <AvatarImage
             className="rounded-2xl"
             width={32}
@@ -28,6 +59,7 @@ const SidebarButton = () => {
           <p className="text-sm font-bold">Matheus lopes</p>
           <p className="text-xs">Matheus@hotmail.com</p>
         </div>
+        */}
       </div>
 
       <div className="flex flex-col gap-2 border-b border-solid p-5">
