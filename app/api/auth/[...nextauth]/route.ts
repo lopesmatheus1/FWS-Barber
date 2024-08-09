@@ -1,5 +1,5 @@
 import { db } from "@/app/_lib/primsa"
-import { PrismaAdapter } from "@auth/prisma-adapter"
+import { PrismaAdapter } from "@next-auth/prisma-adapter"
 import NextAuth from "next-auth"
 import { Adapter } from "next-auth/adapters"
 import GoogleProvider from "next-auth/providers/google"
