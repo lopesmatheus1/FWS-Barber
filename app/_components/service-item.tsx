@@ -5,21 +5,19 @@ import Image from "next/image"
 import { Button } from "./ui/button"
 import { Card, CardContent } from "./ui/card"
 import {
-  SheetClose,
   SheetFooter,
   Sheet,
-  SheetTrigger,
   SheetContent,
   SheetHeader,
   SheetTitle,
 } from "./ui/sheet"
 import { Calendar } from "./ui/calendar"
-import { ptBR, tr } from "date-fns/locale"
+import { ptBR } from "date-fns/locale"
 import { useEffect, useState } from "react"
-import { addDays, format, set, setHours, setMinutes } from "date-fns"
+import { format, set } from "date-fns"
 import { createBooking } from "../_actions/create-bookings"
 import { useSession } from "next-auth/react"
-import { number } from "zod"
+
 import { toast } from "sonner"
 import { getBookings } from "../_actions/get-bookings"
 import { Dialog } from "./ui/dialog"
