@@ -4,7 +4,7 @@ import { Button } from "./_components/ui/button"
 import { SearchIcon } from "lucide-react"
 import Image from "next/image"
 import Banner from "../public/banner-01.png"
-import { Card, CardContent } from "./_components/ui/card"
+import Search from "./_components/search"
 import BookingItem from "./_components/booking-item"
 import { db } from "./_lib/primsa"
 import BarbershopItem from "./_components/barbershop-item"
@@ -28,11 +28,8 @@ const Home = async () => {
         <p>Segunda-feira, 05 de agosto.</p>
 
         {/*BUSCA*/}
-        <div className="mt-6 flex items-center gap-2">
-          <Input placeholder="Faça sua busca.."></Input>
-          <Button size="icon">
-            <SearchIcon></SearchIcon>
-          </Button>
+        <div className="mt-6">
+          <Search></Search>
         </div>
 
         {/*BUSCA RAPIDA*/}
