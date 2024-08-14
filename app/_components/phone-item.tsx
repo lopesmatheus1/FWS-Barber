@@ -1,5 +1,4 @@
 "use client"
-import { Toaster } from "./ui/toaster"
 import { SmartphoneIcon } from "lucide-react"
 import { Button } from "./ui/button"
 import { toast } from "sonner"

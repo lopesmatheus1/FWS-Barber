@@ -1,7 +1,6 @@
 "use client"
 
 import Image from "next/image"
-import { LogOut, MenuIcon } from "lucide-react"
 import { SheetClose, SheetContent, SheetTitle, SheetHeader } from "./ui/sheet"
 import { HomeIcon, CalendarIcon } from "lucide-react"
 import { QuickSearchOptions } from "../_constants/search"
@@ -10,20 +9,12 @@ import { Avatar, AvatarImage } from "@radix-ui/react-avatar"
 import Link from "next/link"
 import { Button } from "./ui/button"
 import { LogInIcon } from "lucide-react"
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "./ui/dialog"
-import { signIn, signOut, useSession } from "next-auth/react"
+import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog"
+import { signOut, useSession } from "next-auth/react"
 import SignInDialog from "./sign-in-dialog"
 
 const SidebarButton = () => {
   const { data } = useSession()
-  const handleLoginWithGoogleClick = () => signIn("google")
   const handleLogOout = () => signOut()
   return (
     <SheetContent className="overflow-y-auto">
